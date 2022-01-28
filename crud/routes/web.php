@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/productos', [ControladorProductos::class, 'index'])
     ->name('productos.index');
 
+
 Route::get('/productos/crear', [ControladorProductos::class, 'crear'])
     ->middleware('auth.admin')
     ->name('productos.crear');

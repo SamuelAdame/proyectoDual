@@ -11,8 +11,15 @@ class ControladorProductos extends Controller
         //selecionamos todos los productos
         $productos = Producto::all();
         //estamos enviando los datos a la vista index
-        return view('productos.index', compact('productos'));
+        if(auth()->check()){
+            if(auth()->user()-> role == 'admin'){
+                return view('productos.index', compact('productos'));
+            }
+        }
+        return view('productos.index_usuario', compact('productos'));
     }
+
+    
 
     public function crear(){
         return view('productos.crear');

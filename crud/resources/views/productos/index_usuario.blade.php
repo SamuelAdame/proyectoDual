@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_usuario')
 
 @section('title', 'Home')
     
@@ -15,7 +15,6 @@
           <th class="w-1/16 py-4 ...">Precio</th>
           <th class="w-1/16 py-4 ...">Created</th>
           <th class="w-1/16 py-4 ...">Update</th>
-          <th class="w-28 py-4 ...">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +28,6 @@
           <td class="p-3">{{$row->precio}}</td>
           <td class="p-3 text-center">{{$row->created_at}}</td>
           <td class="p-3 text-center">{{$row->updated_at}}</td>
-          <td class="p-3 flex justify-center"></td>
         </tr>
           @endforeach
       </tbody>
